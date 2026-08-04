@@ -1,32 +1,33 @@
 NAME = push_swap
-ROOT = .
 
-LIB_DIR = $(ROOT)/libft
-LIB = $(LIB_DIR)/libft.a
+LIBFT_DIR = libft
+LIBFT = $(LIBFT_DIR)/libft.a
 
-SRCS = $(shell find $(ROOT) -maxdepth 1 -name '*.c')
+SRC_DIR = .
+SRCS = $(shell find $(SRC_DIR) -maxdepth 1 -name '*.c')
 OBJS = $(SRCS:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
+INCLUDES = -I$(SRC_DIR) -I$(LIBFT_DIR) 
 
 all: $(NAME)
 
-$(NAME): $(LIB) $(OBJS)
+$(NAME): $(LIBFT) $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
-$(LIB):
-	$(MAKE) -C $(LIB_DIR)
+$(LIBFT):
+	$(MAKE) -C $(LIBFT_DIR)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I$(ROOT) -I$(LIB_DIR) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	$(MAKE) -C $(LIB_DIR) clean
+	$(MAKE) -C $(LIBFT_DIR) clean
 	rm -f $(OBJS)
 
 fclean: clean
-	$(MAKE) -C $(LIB_DIR) fclean
+	$(MAKE) -C $(LIBFT_DIR) fclean
 	rm -f $(NAME)
 
 re: fclean all
