@@ -1,0 +1,47 @@
+NAME = push_swap
+
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+
+SRCS_DIR = srcs
+INC_DIR = includes
+
+LIB_DIR = libft
+LIB = $(LIB_DIR)/libft.a
+
+MAIN_DIR = $(SRCS_DIR)/main
+UTILS_DIR = $(SRCS_DIR)/utils
+PARSE_DIR = $(SRCS_DIR)/parse
+OPS_DIR = $(SRCS_DIR)/ops
+SORT_DIR = $(SRCS_DIR)/sort
+BENCH_DIR = $(SRCS_DIR)/bench
+
+# WIP: add source files
+SRCS =	$(MAIN_DIR)/main.c
+
+OBJS = $(SRCS:.c=.o)
+HEADER = $(INC_DIR)/push_swap.h
+INCLUDES = -I$(INC_DIR) -I$(LIB_DIR)
+
+all: $(NAME)
+
+$(NAME): $(LIB) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) $(LIB) -o $(NAME)
+
+$(LIB):
+	$(MAKE) -C $(LIB_DIR)
+
+%.o: %.c $(HEADER)
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+clean:
+	$(MAKE) clean -C $(LIB_DIR)
+	rm -f $(OBJS)
+
+fclean: clean
+	$(MAKE) fclean -C $(LIB_DIR)
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
