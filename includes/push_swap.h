@@ -24,10 +24,10 @@ typedef struct s_stack
 
 typedef enum e_strat
 {
-	STRAT_ADAPTIVE
-	STRAT_SIMPLE,
-	STRAT_MEDIUM,
-	STRAT_COMPLEX,
+	ADAPTIVE,
+	SIMPLE,
+	MEDIUM,
+	COMPLEX
 }	t_strat;
 
 typedef struct s_ops;
