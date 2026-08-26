@@ -30,30 +30,29 @@ typedef enum e_strat
 	COMPLEX
 }	t_strat;
 
-typedef struct s_ops;
+typedef enum e_ops
 {
-	int	sa;
-	int	sb;
-	int	ss;
-	int	pa;
-	int	pb;
-	int	ra;
-	int	rb;
-	int	rr;
-	int	rra;
-	int	rrb;
-	int	rrr;
+	sa,
+	sb,
+	ss,
+	pa,
+	pb,
+	ra,
+	rb,
+	rr,
+	rra,
+	rrb,
+	rrr
 }	t_ops;
 
 typedef struct s_data
 {
-	t_stack **a;
-	t_stack **b;
-	t_strat *strat;
+	t_stack	**a;
+	t_stack	**b;
+	t_strat	strat;
 	int		bench;
 	float	disorder;
-	t_ops	*operations;
-	
+	int		ops[11];
 }	t_data;
 
 /* ==== MAIN (srcs/main/) ==== */
