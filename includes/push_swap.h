@@ -16,6 +16,46 @@
 # include "libft.h"
 # include <limits.h>
 
+typedef struct s_stack
+{
+	int				value;
+	struct s_stack	*next;
+}	t_stack;
+
+typedef enum e_strat
+{
+	STRAT_ADAPTIVE
+	STRAT_SIMPLE,
+	STRAT_MEDIUM,
+	STRAT_COMPLEX,
+}	t_strat;
+
+typedef struct s_ops;
+{
+	int	sa;
+	int	sb;
+	int	ss;
+	int	pa;
+	int	pb;
+	int	ra;
+	int	rb;
+	int	rr;
+	int	rra;
+	int	rrb;
+	int	rrr;
+}	t_ops;
+
+typedef struct s_data
+{
+	t_stack **a;
+	t_stack **b;
+	t_strat *strat;
+	int		bench;
+	float	disorder;
+	t_ops	*operations;
+	
+}	t_data;
+
 /* ==== MAIN (srcs/main/) ==== */
 
 // TODO
