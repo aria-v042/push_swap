@@ -12,7 +12,31 @@
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+// NOTE: don't forget to free data
+int	init_data(t_data *data)
 {
+	t_stack	*a;
+	t_stack	*b;
+
+	*data = malloc(sizeof(t_data));
+	if (!*data)
+		return (-1);
+	data->a = &a;
+	data->b = &b;
+	data->strat = ADAPTIVE;
+	data->bench = 0;
+	data->disorder = 0;
+	data->ops = ft_memset(data->ops, 0, sizeof(t_ops) * 10);
+	return (0);
+}
+
+int	main(int argc, char **argv)
+{
+	t_data	data;
+
+	if (argc < 2)
+		return (0);
+	init_data(&data);
+	//parser(argc, argv, &data);
 	return (0);
 }
