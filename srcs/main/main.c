@@ -6,37 +6,33 @@
 /*   By: frodrig2 <frodrig2@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/25 12:41:11 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/25 12:42:17 by frodrig2         ###   ########.fr       */
+/*   Updated: 2026/08/26 22:02:16 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // NOTE: don't forget to free data
-int	init_data(t_data *data)
+int	init_data(t_data *data, t_stack *a, t_stack *b)
 {
-	t_stack	*a;
-	t_stack	*b;
-
-	*data = malloc(sizeof(t_data));
-	if (!*data)
-		return (-1);
-	data->a = &a;
-	data->b = &b;
+	data->a = a;
+	data->b = b;
 	data->strat = ADAPTIVE;
 	data->bench = 0;
 	data->disorder = 0;
-	data->ops = ft_memset(data->ops, 0, sizeof(t_ops) * 10);
+	ft_memset(data->ops, 0, sizeof(data->ops));
 	return (0);
 }
 
 int	main(int argc, char **argv)
 {
+	t_stack	*a;
+	t_stack	*b;
 	t_data	data;
 
 	if (argc < 2)
 		return (0);
-	init_data(&data);
+	init_data(&data, &a, &b);
 	//parser(argc, argv, &data);
 	return (0);
 }
