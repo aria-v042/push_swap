@@ -19,7 +19,7 @@ int	init_data(t_data *data, t_stack *a, t_stack *b)
 	data->strat = ADAPTIVE;
 	data->bench = 0;
 	data->disorder = 0;
-	ft_memset(data->ops, 0, sizeof(data->ops));
+	ft_memset(data->ops_count, 0, sizeof(data->ops_count));
 	return (0);
 }
 
