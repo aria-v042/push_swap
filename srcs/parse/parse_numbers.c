@@ -34,7 +34,7 @@ static int	parse_integer(t_data *data, char *arg)
 	num = ft_atol(arg);
 	if (num < INT_MIN || num > INT_MAX)
 		return (-1);
-	if (stack_dup(data, (int) num))
+	if (stack_dup(data->a, (int)num))
 		return (-1);
 	// TODO: stack_add(data, num)
 	return (0);
@@ -59,4 +59,3 @@ int	parse_numbers(t_data *data, char *arg)
 		free_split(split_args);
 	return (exit_code);
 }
-

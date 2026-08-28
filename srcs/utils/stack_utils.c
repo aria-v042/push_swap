@@ -12,16 +12,13 @@
 
 #include "push_swap.h"
 
-int	stack_dup(t_data *data, int num)
+int	stack_dup(t_stack *s, int num)
 {
-	t_stack	*a;
-
-	a = data->a;
-	while (a)
+	while (s)
 	{
-		if (a->value == num)
+		if (s->value == num)
 			return (1);
-		a = a->next;
+		s = s->next;
 	}
 	return (0);
 }
