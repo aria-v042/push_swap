@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-static void	init_data(t_data *data, t_stack *a, t_stack *b)
+static void	init_data(t_data *data)
 {
-	data->a = a;
-	data->b = b;
+	data->a = NULL;
+	data->b = NULL;
 	data->strat = ADAPTIVE;
 	data->bench_mode = 0;
 	data->disorder = 0;
@@ -24,13 +24,11 @@ static void	init_data(t_data *data, t_stack *a, t_stack *b)
 
 int	main(int argc, char **argv)
 {
-	t_stack	*a;
-	t_stack	*b;
 	t_data	data;
 
 	if (argc < 2)
 		return (0);
-	init_data(&data, &a, &b);
-	parser(argc, argv, &data);
+	init_data(&data);
+	parser(&data, argc, argv);
 	return (0);
 }
