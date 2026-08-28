@@ -12,7 +12,6 @@
 
 #include "push_swap.h"
 
-// NOTE: don't forget to free data
 int	init_data(t_data *data, t_stack *a, t_stack *b)
 {
 	data->a = a;
