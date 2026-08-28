@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_isnumber.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frodrig2 <frodrig2@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/17 23:40:08 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/28 20:39:45 by frodrig2         ###   ########.fr       */
+/*   Created: 2026/08/28 20:17:54 by frodrig2          #+#    #+#             */
+/*   Updated: 2026/08/28 20:21:04 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *s)
+int	ft_isnumber(const char *s)
 {
-	int	iota;
-	int	sign;
+	int	i;
 
-	while (ft_isspace(*s))
+	if (!s || !*s)
+		return (0);
+	i = 0;
+	if (s[i] == '-' || s[i] == '+')
+		i++;
+	if (!s[i])
+		return (0);
+	while (s[i])
 	{
-		s++;
+		if (!ft_isdigit(s[i]))
+			return (0);
+		i++;
 	}
-	sign = 1;
-	if (*s == '-' || *s == '+')
-	{
-		if (*s == '-')
-			sign *= -1;
-		s++;
-	}
-	iota = 0;
-	while (*s >= '0' && *s <= '9')
-	{
-		iota *= 10;
-		iota += *s - '0';
-		s++;
-	}
-	return (iota * sign);
+	return (1);
 }

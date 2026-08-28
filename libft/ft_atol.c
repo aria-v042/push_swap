@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frodrig2 <frodrig2@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/17 23:40:08 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/28 20:39:45 by frodrig2         ###   ########.fr       */
+/*   Created: 2026/08/28 20:37:42 by frodrig2          #+#    #+#             */
+/*   Updated: 2026/08/28 20:38:48 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *s)
+int	ft_atol(const char *s)
 {
-	int	iota;
-	int	sign;
+	long long	lota;
+	int			sign;
 
 	while (ft_isspace(*s))
 	{
@@ -28,12 +28,12 @@ int	ft_atoi(const char *s)
 			sign *= -1;
 		s++;
 	}
-	iota = 0;
+	lota = 0;
 	while (*s >= '0' && *s <= '9')
 	{
-		iota *= 10;
-		iota += *s - '0';
+		lota *= 10;
+		lota += *s - '0';
 		s++;
 	}
-	return (iota * sign);
+	return (lota * sign);
 }

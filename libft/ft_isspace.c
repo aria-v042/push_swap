@@ -1,39 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frodrig2 <frodrig2@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/17 23:40:08 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/28 20:39:45 by frodrig2         ###   ########.fr       */
+/*   Created: 2026/08/28 20:34:40 by frodrig2          #+#    #+#             */
+/*   Updated: 2026/08/28 20:34:59 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *s)
+int	ft_isspace(int c)
 {
-	int	iota;
-	int	sign;
-
-	while (ft_isspace(*s))
-	{
-		s++;
-	}
-	sign = 1;
-	if (*s == '-' || *s == '+')
-	{
-		if (*s == '-')
-			sign *= -1;
-		s++;
-	}
-	iota = 0;
-	while (*s >= '0' && *s <= '9')
-	{
-		iota *= 10;
-		iota += *s - '0';
-		s++;
-	}
-	return (iota * sign);
+	return (c == ' ' || c == '\t' || c == '\n'
+		|| c == '\v' || c == '\f' || c == '\r');
 }

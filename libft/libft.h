@@ -6,7 +6,7 @@
 /*   By: frodrig2 <frodrig2@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 22:23:55 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/18 10:31:45 by frodrig2         ###   ########.fr       */
+/*   Updated: 2026/08/28 20:39:50 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,11 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 int		ft_printf(const char *format, ...);
 int		ft_printf_fd(int fd, const char *format, ...);
+
+/* ==== EXTRAS ==== */
+
+int		ft_isspace(int c);
+int		ft_isnumber(const char *s);
+int		ft_atol(const char *s);
 
 #endif
