@@ -59,7 +59,7 @@ typedef struct s_data
 
 /* ==== UTILS (srcs/utils/) ==== */
 
-// TODO
+int	stack_dup(t_data *data, int num);
 
 /* ==== PARSING (srcs/parse/) ==== */
 
