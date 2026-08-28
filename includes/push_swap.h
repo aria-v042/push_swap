@@ -50,7 +50,7 @@ typedef struct s_data
 	t_stack	**a;
 	t_stack	**b;
 	t_strat	strat;
-	int		bench;
+	int		bench_mode;
 	float	disorder;
 	int		ops_count[11];
 }	t_data;
