@@ -6,7 +6,7 @@
 /*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/25 12:42:26 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/28 15:51:01 by nd-abreu         ###   ########.fr       */
+/*   Updated: 2026/08/28 21:31:30 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ typedef enum e_ops
 
 typedef struct s_data
 {
-	t_stack	**a;
-	t_stack	**b;
+	t_stack	*a;
+	t_stack	*b;
 	t_strat	strat;
 	int		bench_mode;
 	float	disorder;
