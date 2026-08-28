@@ -64,14 +64,12 @@ typedef struct s_data
 /* ==== PARSING (srcs/parse/) ==== */
 
 int	parser(t_data *data, int argc, char **argv);
+int	parse_flag(t_data *data, char *arg);
+int	parse_numbers(t_data *data, char *arg);
 
 /* ==== OPERATIONS (srcs/ops/) ==== */
 
-// TODO
-
 /* ==== SORTING STRATEGIES (srcs/sort/) ==== */
-
-// TODO
 
 /* tiny */
 /* simple - O(n^2) */
@@ -79,7 +77,5 @@ int	parser(t_data *data, int argc, char **argv);
 /* complex - O(n log n) */
 
 /* ==== BENCHMARKS (srcs/bench/) ==== */
-
-// TODO
 
 #endif
