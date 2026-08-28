@@ -63,7 +63,7 @@ typedef struct s_data
 
 /* ==== PARSING (srcs/parse/) ==== */
 
-// TODO
+int	parser(t_data *data, int argc, char **argv);
 
 /* ==== OPERATIONS (srcs/ops/) ==== */
 

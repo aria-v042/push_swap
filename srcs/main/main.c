@@ -31,6 +31,6 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	init_data(&data, &a, &b);
-	//parser(argc, argv, &data);
+	parser(argc, argv, &data);
 	return (0);
 }
