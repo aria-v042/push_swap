@@ -46,7 +46,7 @@ int	parse_numbers(t_data *data, char *arg)
 	int		i;
 	int		exit_code;
 
-	split_args = ft_split(arg, " ");
+	split_args = ft_split(arg, ' ');
 	if (!split_args || !split_args[0])
 		return (-1);
 	i = 0;
