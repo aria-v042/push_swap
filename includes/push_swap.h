@@ -57,8 +57,6 @@ typedef struct s_data
 
 /* ==== MAIN (srcs/main/) ==== */
 
-// TODO
-
 /* ==== UTILS (srcs/utils/) ==== */
 
 // TODO

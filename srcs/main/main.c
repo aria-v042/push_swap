@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	init_data(t_data *data, t_stack *a, t_stack *b)
+static void	init_data(t_data *data, t_stack *a, t_stack *b)
 {
 	data->a = a;
 	data->b = b;
@@ -20,7 +20,6 @@ int	init_data(t_data *data, t_stack *a, t_stack *b)
 	data->bench_mode = 0;
 	data->disorder = 0;
 	ft_memset(data->ops_count, 0, sizeof(data->ops_count));
-	return (0);
 }
 
 int	main(int argc, char **argv)
