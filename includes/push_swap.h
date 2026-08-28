@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frodrig2 <frodrig2@students.42porto.com>   +#+  +:+       +#+        */
+/*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/25 12:42:26 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/25 12:52:02 by frodrig2         ###   ########.fr       */
+/*   Updated: 2026/08/28 15:51:01 by nd-abreu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ typedef struct s_data
 	t_strat	strat;
 	int		bench;
 	float	disorder;
-	int		ops[11];
+	int		ops_count[11];
 }	t_data;
 
 /* ==== MAIN (srcs/main/) ==== */
