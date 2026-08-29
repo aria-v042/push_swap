@@ -6,7 +6,7 @@
 /*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/25 12:42:26 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/28 21:31:30 by frodrig2         ###   ########.fr       */
+/*   Updated: 2026/08/29 00:25:45 by nd-abreu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,17 @@ typedef enum e_strat
 
 typedef enum e_ops
 {
-	sa,
-	sb,
-	ss,
-	pa,
-	pb,
-	ra,
-	rb,
-	rr,
-	rra,
-	rrb,
-	rrr
+	OP_SA,
+	OP_SB,
+	OP_SS,
+	OP_PA,
+	OP_PB,
+	OP_RA,
+	OP_RB,
+	OP_RR,
+	OP_RRA,
+	OP_RRB,
+	OP_RRR
 }	t_ops;
 
 typedef struct s_data
