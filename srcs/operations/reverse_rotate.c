@@ -12,20 +12,20 @@
 
 #include "push_swap.h"
 
-static void	reverse_rotate_one(t_stack **stack)
+static void	reverse_rotate_one(t_stack **stack_p)
 {
-	t_stack	*second_last;
-	t_stack	*last;
+	t_stack	*second_bottom;
+	t_stack	*bottom;
 
-	if (!*stack || !(*stack)->next)
+	if (!*stack_p || !(*stack_p)->next)
 		return ;
-	second_last = *stack;
-	while (second_last->next->next)
-		second_last = second_last->next;
-	last = second_last->next;
-	second_last->next = NULL;
-	last->next = *stack;
-	*stack = last;
+	second_bottom = *stack_p;
+	while (second_bottom->next->next)
+		second_bottom = second_last->next;
+	bottom = second_last->next;
+	second_bottom->next = NULL;
+	bottom->next = *stack_p;
+	*stack_p = bottom;
 }
 
 void	rra(t_data *data)
