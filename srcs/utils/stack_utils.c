@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static t_stack	*stack_get_bottom(t_stack *node)
+t_stack	*stack_get_bottom(t_stack *node)
 {
 	if (!node)
 		return (NULL);
