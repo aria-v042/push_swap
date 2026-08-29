@@ -31,15 +31,15 @@ static int	parse_integer(t_data *data, char *arg)
 	t_stack		*new_node;
 
 	if (!ft_isnumber(arg))
-		return (-1);
+		return (1);
 	num = ft_atol(arg);
 	if (num < INT_MIN || num > INT_MAX)
-		return (-1);
+		return (1);
 	if (stack_check_dup(data->a, (int)num))
-		return (-1);
+		return (1);
 	new_node = stack_new_node((int)num);
 	if (!new_node)
-		return (-1);
+		return (1);
 	stack_add_bottom(&data->a, new_node);
 	return (0);
 }
@@ -52,8 +52,9 @@ int	parse_numbers(t_data *data, char *arg)
 
 	split_args = ft_split(arg, ' ');
 	if (!split_args || !split_args[0])
-		return (-1);
+		return (1);
 	i = 0;
+	exit_code = 0;
 	while (split_args[i] && exit_code == 0)
 	{
 		exit_code = parse_integer(data, split_args[i]);

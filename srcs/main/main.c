@@ -12,6 +12,14 @@
 
 #include "push_swap.h"
 
+static void	error_exit(t_data *data)
+{
+	stack_free(&data->a);
+	stack_free(&data->b);
+	ft_printf_fd(2, "Error\n");
+	exit (1);
+}
+
 static void	init_data(t_data *data)
 {
 	data->a = NULL;
@@ -27,9 +35,9 @@ int	main(int argc, char **argv)
 	t_data	data;
 
 	if (argc < 2)
-		return (0);
+		return (1);
 	init_data(&data);
 	if (parser(&data, argc, argv) != 0)
-		// TODO: treat parser error
+		error_exit(&data);
 	return (0);
 }

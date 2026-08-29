@@ -20,9 +20,10 @@ static int	is_flag(char *arg)
 int	parser(t_data *data, int argc, char **argv)
 {
 	int	i;
-	int exit_code;
+	int	exit_code;
 
 	i = 1;
+	exit_code = 0;
 	while (i < argc && exit_code == 0)
 	{
 		if (is_flag(argv[i]))
