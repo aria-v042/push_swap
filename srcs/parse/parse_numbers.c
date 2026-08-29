@@ -25,6 +25,17 @@ static void	free_split(char **split_args)
 	free(split_args);
 }
 
+static int	is_duplicate(t_stack *node, int num)
+{
+	while (node)
+	{
+		if (node->value == num)
+			return (1);
+		node = node->next;
+	}
+	return (0);
+}
+
 static int	parse_integer(t_data *data, char *arg)
 {
 	long long	num;
@@ -35,7 +46,7 @@ static int	parse_integer(t_data *data, char *arg)
 	num = ft_atol(arg);
 	if (num < INT_MIN || num > INT_MAX)
 		return (1);
-	if (stack_check_dup(data->a, (int)num))
+	if (is_duplicate(data->a, (int)num))
 		return (1);
 	new_node = stack_new_node((int)num);
 	if (!new_node)

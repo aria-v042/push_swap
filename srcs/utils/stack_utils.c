@@ -21,17 +21,6 @@ t_stack	*stack_get_bottom(t_stack *node)
 	return (node);
 }
 
-int	stack_check_dup(t_stack *node, int num)
-{
-	while (node)
-	{
-		if (node->value == num)
-			return (1);
-		node = node->next;
-	}
-	return (0);
-}
-
 t_stack	*stack_new_node(int value)
 {
 	t_stack	*new_node;

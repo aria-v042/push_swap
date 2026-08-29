@@ -59,7 +59,6 @@ typedef struct s_data
 
 /* ==== UTILS (srcs/utils/) ==== */
 
-int		stack_check_dup(t_stack *node, int num);
 t_stack	*stack_new_node(int value);
 void	stack_add_bottom(t_stack **stack_p, t_stack *new_node);
 void	stack_free(t_stack **stack_p);
