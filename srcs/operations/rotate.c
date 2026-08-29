@@ -12,13 +12,6 @@
 
 #include "push_swap.h"
 
-[0] [1] [2]
-
-top = [3]
-bottom = [0]
-
-0 1 2 3
-
 static void	rotate_one(t_stack **stack_p)
 {
 	t_stack	*top;
