@@ -59,13 +59,15 @@ typedef struct s_data
 
 /* ==== UTILS (srcs/utils/) ==== */
 
-int	stack_dup(t_stack *s, int num);
+int		stack_check_dup(t_stack *node, int num);
+t_stack	*stack_new_node(int value);
+void	stack_add_bottom(t_stack **stack_p, t_stack *new_node);
 
 /* ==== PARSING (srcs/parse/) ==== */
 
-int	parser(t_data *data, int argc, char **argv);
-int	parse_flag(t_data *data, char *arg);
-int	parse_numbers(t_data *data, char *arg);
+int		parser(t_data *data, int argc, char **argv);
+int		parse_flag(t_data *data, char *arg);
+int		parse_numbers(t_data *data, char *arg);
 
 /* ==== OPERATIONS (srcs/ops/) ==== */
 
