@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frodrig2 <frodrig2@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/17 23:40:08 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/28 20:39:45 by frodrig2         ###   ########.fr       */
+/*   Created: 2026/08/28 18:49:47 by frodrig2          #+#    #+#             */
+/*   Updated: 2026/08/28 20:13:18 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_atoi(const char *s)
+static int	is_flag(char *arg)
 {
-	int	iota;
-	int	sign;
+	return (ft_strncmp(arg, "--", 2) == 0);
+}
 
-	while (ft_isspace(*s))
+int	parser(t_data *data, int argc, char **argv)
+{
+	int	i;
+	int	exit_code;
+
+	i = 1;
+	exit_code = 0;
+	while (i < argc && exit_code == 0)
 	{
-		s++;
+		if (is_flag(argv[i]))
+			exit_code = parse_flag(data, argv[i]);
+		else
+			exit_code = parse_numbers(data, argv[i]);
+		i++;
 	}
-	sign = 1;
-	if (*s == '-' || *s == '+')
-	{
-		if (*s == '-')
-			sign *= -1;
-		s++;
-	}
-	iota = 0;
-	while (*s >= '0' && *s <= '9')
-	{
-		iota *= 10;
-		iota += *s - '0';
-		s++;
-	}
-	return (iota * sign);
+	return (exit_code);
 }

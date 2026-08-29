@@ -17,7 +17,12 @@ SORT_DIR = $(SRCS_DIR)/sort
 BENCH_DIR = $(SRCS_DIR)/bench
 
 # WIP: add source files
-SRCS =	$(MAIN_DIR)/main.c
+SRCS =	$(MAIN_DIR)/main.c \
+		$(PARSE_DIR)/parser.c \
+		$(PARSE_DIR)/parse_flags.c \
+		$(PARSE_DIR)/parse_numbers.c \
+		$(UTILS_DIR)/stack_utils.c \
+
 
 OBJS = $(SRCS:.c=.o)
 HEADER = $(INC_DIR)/push_swap.h
