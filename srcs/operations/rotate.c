@@ -21,7 +21,7 @@ static void	rotate_one(t_stack **stack_p)
 		return ;
 	top = *stack_p;
 	*stack_p = (*stack_p)->next;
-	bottom = stack_get_bottom(*stack_p)
+	bottom = stack_get_bottom(*stack_p);
 	bottom->next = top;
 	top->next = NULL;
 }
