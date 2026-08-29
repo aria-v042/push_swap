@@ -49,4 +49,3 @@ void	rr(t_data *data)
 	ft_printf("rr\n");
 	data->ops_count[OP_RR]++;
 }
-
