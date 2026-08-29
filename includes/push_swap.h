@@ -6,7 +6,7 @@
 /*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/25 12:42:26 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/29 00:25:45 by nd-abreu         ###   ########.fr       */
+/*   Updated: 2026/08/29 02:30:33 by nd-abreu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	parse_numbers(t_data *data, char *arg);
 
 /* ==== SORTING STRATEGIES (srcs/sort/) ==== */
 
-/* tiny */
+void	compute_disorder(t_data *data);
 /* simple - O(n^2) */
 /* medium - O(n sqrt(n)) */
 /* complex - O(n log n) */
