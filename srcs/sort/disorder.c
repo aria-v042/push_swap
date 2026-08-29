@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	compute_disorder(t_data *data)
+void	set_disorder(t_data *data)
 {
 	t_stack	*node_i;
 	t_stack	*node_j;

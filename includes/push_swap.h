@@ -75,7 +75,8 @@ int		parse_numbers(t_data *data, char *arg);
 
 /* ==== SORTING STRATEGIES (srcs/sort/) ==== */
 
-void	compute_disorder(t_data *data);
+void	set_disorder(t_data *data);
+
 /* simple - O(n^2) */
 /* medium - O(n sqrt(n)) */
 /* complex - O(n log n) */
