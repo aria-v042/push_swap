@@ -21,7 +21,6 @@ static t_stack	*stack_get_bottom(t_stack *node)
 	return (node);
 }
 
-
 int	stack_check_dup(t_stack *node, int num)
 {
 	while (node)
@@ -57,5 +56,21 @@ void	stack_add_bottom(t_stack **stack_p, t_stack *new_node)
 	{
 		bottom = stack_get_bottom(*stack_p);
 		bottom->next = new_node;
+	}
+}
+
+void	stack_free(t_stack **stack_p)
+{
+	t_stack	*node;
+	t_stack	*next_node;
+
+	if (!stack_p)
+		return ;
+	node = *stack_p;
+	while (node)
+	{
+		next_node = node->next;
+		free(node);
+		node = next_node;
 	}
 }
