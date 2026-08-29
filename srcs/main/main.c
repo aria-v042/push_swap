@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	t_data	data;
 
 	if (argc < 2)
-		return (0);
+		return (1);
 	init_data(&data);
 	if (parser(&data, argc, argv) != 0)
 		// TODO: treat parser error
