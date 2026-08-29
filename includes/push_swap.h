@@ -6,7 +6,7 @@
 /*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/25 12:42:26 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/29 02:30:33 by nd-abreu         ###   ########.fr       */
+/*   Updated: 2026/08/29 21:47:12 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ typedef struct s_data
 }	t_data;
 
 /* ==== MAIN (srcs/main/) ==== */
+
+void	error_exit(t_data *data);
 
 /* ==== UTILS (srcs/utils/) ==== */
 
