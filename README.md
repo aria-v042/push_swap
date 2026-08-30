@@ -172,6 +172,14 @@ under control. Space stays O(n) throughout — the input is duplicated at
 most into the two stacks plus rank bookkeeping, with no algorithm ever
 allocating more than that.
 
+## Contributions
+
+| Contributor | Main contributions |
+|---|---|
+| `nd-abreu` | main loop, argument parsing, error handling, benchmark mode, final optimization pass across all sorting strategies. |
+| `frodrig2` | theoretical research into candidate algorithms and their initial implementations, the stack operation/move primitives, disorder calculation, bug hunting, and general project upkeep. |
+| Both | overall design decisions and the final round of optimizations. |
+
 ## Resources
 
 - [push_swap – the least amount of moves with two stacks](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a) — the single most useful write-up while designing the medium/complex strategies.
@@ -190,12 +198,3 @@ redundant rotations, tightening the small-stack routine) once the core
 algorithms were already written and understood. No code was generated
 wholesale by AI and pasted in — every function was written and is
 explainable by both of us.
-
-## Contributions
-
-- **frodrig2** — main loop, argument parsing, error handling, benchmark mode,
-  final optimization pass across all sorting strategies.
-- **nd-abreu** — theoretical research into candidate algorithms and their
-  initial implementations, the stack operation/move primitives, disorder
-  calculation, bug hunting, and general project upkeep.
-- **Both** — overall design decisions and the final round of optimizations.
