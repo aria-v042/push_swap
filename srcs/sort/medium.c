@@ -60,21 +60,18 @@ static void	sort_chunk(t_data *data, int lower, int upper)
 
 void	medium_sort(t_data *data)
 {
-	int	n;
 	int	min;
 	int	max;
 	int	k;
 	int	width;
 	int	chunk;
 
-	n = stack_size(data->a);
-	if (n <= 3)
+	if (stack_size(data->a) <= 5)
 	{
-		small_sort(data);
-		return ;
+		return (small_sort(data));
 	}
 	get_min_max(data->a, &min, &max);
-	k = chunk_count(n);
+	k = chunk_count(stack_size(data->a));
 	width = (max - min + 1 + k - 1) / k;
 	chunk = 0;
 	while (chunk < k)
