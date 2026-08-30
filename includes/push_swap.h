@@ -6,7 +6,7 @@
 /*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/25 12:42:26 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/30 01:19:30 by nd-abreu         ###   ########.fr       */
+/*   Updated: 2026/08/30 01:42:06 by nd-abreu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,11 @@ int		parse_numbers(t_data *data, char *arg);
 void	set_disorder(t_data *data);
 
 /* simple - O(n^2) */
+void	simple_sort(t_data *data);
 /* medium - O(n sqrt(n)) */
+void	medium_sort(t_data *data);
 /* complex - O(n log n) */
+void	complex_sort(t_data *data);
 
 /* ==== BENCHMARKS (srcs/bench/) ==== */
 
