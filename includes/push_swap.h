@@ -110,7 +110,7 @@ void	rotate_to_top_a(t_data *data, int index, int size);
 void	rotate_to_top_b(t_data *data, int index, int size);
 int		find_insert_index_b(t_stack *stack, int count_in_b, int value);
 void	insert_into_b(t_data *data, int idx);
-void	assign_indexes(t_stack *a);
+void	assign_ranks(t_stack *a);
 int		is_sorted(t_stack *stack);
 
 #endif
