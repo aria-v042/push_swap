@@ -37,8 +37,7 @@ static char	*get_strategy(t_strat strat)
 		return ("Medium");
 	if (strat == COMPLEX)
 		return ("Complex");
-	if (strat == ADAPTIVE)
-		return ("Adaptive");
+	return ("Adaptive");
 }
 
 static char	*get_complexity(t_data *data)
@@ -53,8 +52,7 @@ static char	*get_complexity(t_data *data)
 		return ("O(n²)");
 	if (data->disorder < 0.50)
 		return ("O(n√n)");
-	else
-		return ("O(n log n)");
+	else return ("O(n log n)");
 }
 
 static int	total_ops(int *ops_count)
@@ -63,6 +61,7 @@ static int	total_ops(int *ops_count)
 	int	total;
 
 	i = 0;
+	total = 0;
 	while (i < 11)
 	{
 		total += ops_count[i];
