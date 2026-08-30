@@ -6,7 +6,7 @@
 #    By: frodrig2 <frodrig2@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/20 21:45:22 by frodrig2          #+#    #+#              #
-#    Updated: 2026/08/28 20:40:45 by frodrig2         ###   ########.fr        #
+#    Updated: 2026/08/30 02:54:51 by frodrig2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,6 +78,7 @@ SRCS = ft_atoi.c \
 		ft_isspace.c \
 		ft_isnumber.c \
 		ft_atol.c \
+		ft_numlen.c
 
 OBJS = $(SRCS:.c=.o)
 

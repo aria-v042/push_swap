@@ -6,7 +6,7 @@
 /*   By: frodrig2 <frodrig2@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 10:29:17 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/18 10:30:02 by frodrig2         ###   ########.fr       */
+/*   Updated: 2026/08/30 02:53:43 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,26 +23,4 @@ int	ft_putnbr_base_fd(unsigned long long n, char *base, int fd)
 		bytes_printed += ft_putnbr_base_fd(n / base_size, base, fd);
 	ft_putchar_fd(base[n % base_size], fd);
 	return (++bytes_printed);
-}
-
-size_t	ft_numlen(int n)
-{
-	size_t		count;
-	long long	big;
-
-	count = 0;
-	if (n == 0)
-		return (++count);
-	big = (long long) n;
-	if (big < 0)
-	{
-		count++;
-		big *= -1;
-	}
-	while (big > 0)
-	{
-		count++;
-		big /= 10;
-	}
-	return (count);
 }

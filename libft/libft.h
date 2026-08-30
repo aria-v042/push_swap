@@ -6,7 +6,7 @@
 /*   By: frodrig2 <frodrig2@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 22:23:55 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/28 20:39:50 by frodrig2         ###   ########.fr       */
+/*   Updated: 2026/08/30 02:54:25 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ int		ft_printf_fd(int fd, const char *format, ...);
 int		ft_isspace(int c);
 int		ft_isnumber(const char *s);
 int		ft_atol(const char *s);
+size_t	ft_numlen(int n);
 
 #endif
