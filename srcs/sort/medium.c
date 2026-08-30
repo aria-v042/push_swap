@@ -54,7 +54,7 @@ static void	push_chunk_into_b(t_data *data, int chunk_min, int chunk_max)
 	index = get_index_in_chunk(data->a, chunk_min, chunk_max);
 	while (index > 0)
 	{
-		rotate_to_top_a(data, index);
+		rotate_to_top_a(data, index, stack_size(data->a));
 		pb(data);
 		index = get_index_in_chunk(data->a, chunk_min, chunk_max);
 	}
@@ -82,8 +82,8 @@ void	medium_sort(t_data *data)
 	}
 	while (data->b)
 	{
-		max_index = get_max_index(data->b);
-		rotate_to_top_b(data, index);
+		max_index = get_max_index(data->b, stack_size(data->b));
+		rotate_to_top_b(data, max_index, stack_size(data->b));
 		pa(data);
 	}
 }
