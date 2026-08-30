@@ -20,11 +20,11 @@ static void	run_sort(t_data *data)
 		medium_sort(data);
 	else if (data->strat == COMPLEX)
 		complex_sort(data);
-	else if (data->strat == ADAPTIVE)
+	else
 	{
 		if (data->disorder < 0.20)
 			simple_sort(data);
-		else if (data->disorder >= 0.20 && data->disorder < 0.50)
+		else if (data->disorder < 0.50)
 			medium_sort(data);
 		else
 			complex_sort(data);
