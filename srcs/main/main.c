@@ -58,6 +58,8 @@ int	main(int argc, char **argv)
 		error_exit(&data);
 	set_disorder(&data);
 	run_sort(&data);
+	if (data.bench_mode == 1)
+		display_benchmarks(&data);
 	cleanup(&data);
 	return (0);
 }

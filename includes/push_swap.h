@@ -6,7 +6,7 @@
 /*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/25 12:42:26 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/30 09:20:08 by nd-abreu         ###   ########.fr       */
+/*   Updated: 2026/08/30 12:05:08 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft.h"
 # include <limits.h>
+# include <unistd.h>
 
 typedef struct s_stack
 {
@@ -113,5 +114,7 @@ int		get_min_index(t_stack *node, int n);
 void	rotate_to_top_a(t_data *data, int index, int size);
 
 /* ==== BENCHMARKS (srcs/bench/) ==== */
+
+void	display_benchmarks(t_data *data);
 
 #endif
