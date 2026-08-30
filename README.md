@@ -6,24 +6,21 @@
 
 ## Description
 
-`push_swap` sorts a list of integers using only two stacks (`a` and `b`) and a
-restricted set of eleven operations (`sa`, `sb`, `ss`, `pa`, `pb`, `ra`, `rb`,
-`rr`, `rra`, `rrb`, `rrr`). The numbers start on stack `a`, stack `b` starts
-empty, and the program's only job is to print, to standard output, the
-shortest reasonable sequence of moves that leaves `a` sorted in ascending
-order.
+`push_swap` is a C sorting project built around two stacks, `a` and `b`, and a
+restricted instruction set. Stack `a` initially holds the input as unique
+signed integers in argument order, with the first value at the top; stack `b`
+starts empty. The program must leave `a` sorted in ascending order and `b`
+empty, using as few operations as the selected strategy can produce.
 
-The real point of the project isn't the sorting itself — it's algorithmic
-complexity, made concrete. Instead of reasoning about Big-O over array
-comparisons, everything here is measured in the number of stack operations
-generated. To force that comparison, `push_swap` doesn't implement one
-algorithm: it implements **four**, spanning O(n²), O(n√n), O(n log n), and an
-adaptive strategy that picks between them based on how disordered the input
-is. A `--bench` mode exposes the chosen strategy, the measured disorder, and
-the full operation breakdown, so the trade-offs aren't just theoretical.
+Rather than measuring complexity the way a classical array-based sort would,
+this project measures it in terms of the number of Push_swap operations
+generated. The program embeds four runtime-selectable strategies — three
+fixed-complexity ones and one adaptive dispatcher — an inversion-based
+disorder metric, and an optional benchmark report.
 
-A `checker` (bonus) is also included: it replays a list of operations against
-a stack and reports whether they actually sort it.
+Generated operations are written exclusively to standard output. Errors and
+the optional benchmark report go to standard error, so the operation stream
+stays safe to pipe into a checker
 
 ## Instructions
 
@@ -74,7 +71,9 @@ $ ARG="4 67 3 87 23"; ./push_swap --complex $ARG | ./checker_linux $ARG
 OK
 ```
 
-`--bench` sends its output to `stderr`, so it can be inspected without
+The `--bench` flag outputs to `stderr` the measured disorder, the strategy
+actually used (with its complexity class), the total operation count, and the
+count for each of the eleven operation types. It can be inspected without
 disturbing the operation stream on `stdout`:
 
 ```bash
@@ -88,22 +87,12 @@ $ cat bench.txt
 [bench] ra: 2  rb: 1  rr: 0  rra: 0  rrb: 0  rrr: 0
 ```
 
-### Checker (bonus)
+In adaptive mode the reported strategy name always stays `adaptive`; the
+complexity shown is that of whichever internal method the measured disorder
+selected for that run.
 
-```bash
-$ ./checker 3 2 1 0
-rra
-pb
-sa
-rra
-pa
-OK
-```
-
-It reads operations from standard input (one per line, terminated with
-Ctrl+D or EOF), applies them to the stack given as arguments, and reports
-`OK` if `a` ends up sorted and `b` empty, `KO` otherwise. `Error` is printed
-to `stderr` for malformed arguments or malformed/unknown instructions.
+With no arguments, a single value, or an already-sorted sequence, the program
+emits no operations and exits normally.
 
 ## Algorithms
 
