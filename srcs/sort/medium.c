@@ -26,7 +26,7 @@ static void	assign_min_max(t_stack *stack, int *min, int *max)
 	}
 }
 
-static int	chunk_count(int n)
+static int	get_chunk_count(int n)
 {
 	int	chunk_count;
 
@@ -69,7 +69,7 @@ void	medium_sort(t_data *data)
 	if (stack_size(data->a) <= 5)
 		return (small_sort(data));
 	assign_min_max(data->a, &min, &max);
-	chunk_count = chunk_count(stack_size(data->a));
+	chunk_count = get_chunk_count(stack_size(data->a));
 	width = (max - min + 1 + chunk_count - 1) / chunk_count;
 	chunk = 0;
 	while (chunk < chunk_count)
