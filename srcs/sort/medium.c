@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static void	get_min_max(t_stack *stack, int *min, int *max)
+static void	assign_min_max(t_stack *stack, int *min, int *max)
 {
 	*min = stack->value;
 	*max = stack->value;
@@ -62,19 +62,17 @@ void	medium_sort(t_data *data)
 {
 	int	min;
 	int	max;
-	int	k;
+	int	chunk_count;
 	int	width;
 	int	chunk;
 
 	if (stack_size(data->a) <= 5)
-	{
 		return (small_sort(data));
-	}
-	get_min_max(data->a, &min, &max);
-	k = chunk_count(stack_size(data->a));
-	width = (max - min + 1 + k - 1) / k;
+	assign_min_max(data->a, &min, &max);
+	chunk_count = chunk_count(stack_size(data->a));
+	width = (max - min + 1 + chunk_count - 1) / chunk_count;
 	chunk = 0;
-	while (chunk < k)
+	while (chunk < chunk_count)
 	{
 		sort_chunk(data, min + chunk * width, min + chunk * width + width - 1);
 		chunk++;
