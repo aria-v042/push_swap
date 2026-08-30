@@ -14,18 +14,18 @@
 
 static void	reverse_rotate_one(t_stack **stack_p)
 {
-	t_stack	*second_bottom;
-	t_stack	*bottom;
+	t_stack	*second_last;
+	t_stack	*last;
 
 	if (!*stack_p || !(*stack_p)->next)
 		return ;
-	second_bottom = *stack_p;
-	while (second_bottom->next->next)
-		second_bottom = second_last->next;
-	bottom = second_last->next;
-	second_bottom->next = NULL;
-	bottom->next = *stack_p;
-	*stack_p = bottom;
+	second_last = *stack_p;
+	while (second_last->next->next)
+		second_last = second_last->next;
+	last = second_last->next;
+	second_last->next = NULL;
+	last->next = *stack_p;
+	*stack_p = last;
 }
 
 void	rra(t_data *data)
