@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	get_min_index(t_stack *node, int n)
+int	get_min_index(t_stack *node, int size)
 {
 	int	index;
 	int	min_index;
@@ -21,7 +21,7 @@ int	get_min_index(t_stack *node, int n)
 	index = 0;
 	min_index = 0;
 	min_value = node->value;
-	while (index < n)
+	while (index < size)
 	{
 		if (node->value < min_value)
 		{
@@ -34,48 +34,64 @@ int	get_min_index(t_stack *node, int n)
 	return (min_index);
 }
 
+int	get_max_index(t_stack *node, int size)
+{
+	int	index;
+	int	max_index;
+	int	max_value;
+
+	index = 0;
+	max_index = 0;
+	max_value = node->rank;
+	while (index < size)
+	{
+		if (node->rank > max_value)
+		{
+			max_value = node->rank;
+			max_index = index;
+		}
+		node = node->next;
+		index++;
+	}
+	return (max_index);
+}
+
 void	rotate_to_top_a(t_data *data, int index, int size)
 {
 	if (index <= size / 2)
 	{
-		while (index-- > 0)
+		while (index > 0)
+		{
 			ra(data);
+			index--;
+		}
 	}
 	else
 	{
-		while (index++ < size)
+		while (index < size)
+		{
 			rra(data);
+			index++;
+		}
 	}
 }
 
-int	find_insert_index_b(t_stack *stack, int count_in_b, int value)
+void	rotate_to_top_b(t_data *data, int index, int size)
 {
-	int	idx;
-
-	idx = 0;
-	while (idx < count_in_b && stack && stack->value > value)
+	if (index <= size / 2)
 	{
-		idx++;
-		stack = stack->next;
+		while (index > 0)
+		{
+			rb(data);
+			index--;
+		}
 	}
-	return (idx);
-}
-
-void	insert_into_b(t_data *data, int idx)
-{
-	int	i;
-
-	i = 0;
-	while (i < idx)
+	else
 	{
-		rb(data);
-		i++;
-	}
-	pb(data);
-	i = 0;
-	while (i < idx)
-	{
-		rrb(data);
-		i++;
+		while (index < size)
+		{
+			rrb(data);
+			index++;
+		}
 	}
 }

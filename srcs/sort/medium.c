@@ -12,73 +12,79 @@
 
 #include "push_swap.h"
 
-static void	assign_min_max(t_stack *stack, int *min, int *max)
+static int	get_chunk_size(int size)
 {
-	*min = stack->value;
-	*max = stack->value;
-	while (stack)
-	{
-		if (stack->value < *min)
-			*min = stack->value;
-		if (stack->value > *max)
-			*max = stack->value;
-		stack = stack->next;
-	}
+	if (size <= 100)
+		return (size / 5);
+	return (size / 11);
 }
 
-static int	get_chunk_count(int n)
+static int	get_index_in_chunk(t_stack *a, int chunk_min, int chunk_max)
 {
-	int	chunk_count;
+	int	index;
+	int	chunk_first;
+	int	chunk_last;
 
-	chunk_count = 1;
-	while (chunk_count * chunk_count < n)
-		chunk_count++;
-	return (chunk_count);
-}
-
-static void	sort_chunk(t_data *data, int lower, int upper)
-{
-	int	count_in_b;
-	int	pass_count;
-	int	idx;
-
-	count_in_b = 0;
-	pass_count = stack_size(data->a);
-	while (pass_count > 0)
+	index = 0;
+	chunk_first = -1;
+	chunk_last = -1;
+	while (a)
 	{
-		if (data->a->value >= lower && data->a->value <= upper)
+		if (a->rank >= chunk_min && a->rank <= chunk_max)
 		{
-			idx = find_insert_index_b(data->b, count_in_b, data->a->value);
-			insert_into_b(data, idx);
-			count_in_b++;
+			if (chunk_first == -1)
+				chunk_first = index;
+			chunk_last = index;
 		}
-		else
-			ra(data);
-		pass_count--;
+		index++;
+		a = a->next;
+	}
+	if (chunk_first == -1)
+		return (-1);
+	else if (chunk_first <= index - chunk_last)
+		return (chunk_first);
+	else
+		return (chunk_last);
+}
+
+static void	push_chunk_into_b(t_data *data, int chunk_min, int chunk_max)
+{
+	int	index;
+
+	index = get_index_in_chunk(data->a, chunk_min, chunk_max);
+	while (index >= 0)
+	{
+		rotate_to_top_a(data, index, stack_size(data->a));
+		pb(data);
+		index = get_index_in_chunk(data->a, chunk_min, chunk_max);
 	}
 }
 
 void	medium_sort(t_data *data)
 {
-	int	min;
-	int	max;
-	int	chunk_count;
-	int	width;
-	int	chunk;
+	int	chunk_size;
+	int	chunk_min;
+	int	chunk_max;
+	int	max_index;
 
 	if (is_sorted(data->a))
 		return ;
 	if (stack_size(data->a) <= 5)
 		return (small_sort(data));
-	assign_min_max(data->a, &min, &max);
-	chunk_count = get_chunk_count(stack_size(data->a));
-	width = (max - min + 1 + chunk_count - 1) / chunk_count;
-	chunk = 0;
-	while (chunk < chunk_count)
+	assign_ranks(data->a);
+	chunk_size = get_chunk_size(stack_size(data->a));
+	chunk_min = 0;
+	chunk_max = chunk_size - 1;
+	while (data->a)
 	{
-		sort_chunk(data, min + chunk * width, min + chunk * width + width - 1);
-		chunk++;
+		push_chunk_into_b(data, chunk_min, chunk_max);
+		chunk_min += chunk_size;
+		chunk_max += chunk_size;
 	}
 	while (data->b)
+	{
+		max_index = get_max_index(data->b, stack_size(data->b));
+		rotate_to_top_b(data, max_index, stack_size(data->b));
 		pa(data);
+	}
 }

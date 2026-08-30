@@ -52,7 +52,8 @@ static char	*get_complexity(t_data *data)
 		return ("O(n²)");
 	if (data->disorder < 0.50)
 		return ("O(n√n)");
-	else return ("O(n log n)");
+	else
+		return ("O(n log n)");
 }
 
 static int	total_ops(int *ops_count)

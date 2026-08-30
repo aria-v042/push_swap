@@ -65,7 +65,7 @@ void	complex_sort(t_data *data)
 	size = stack_size(data->a);
 	if (size <= 5)
 		return (small_sort(data));
-	assign_indexes(data->a);
+	assign_ranks(data->a);
 	max_bits = get_max_bits(size);
 	bit = 0;
 	while (bit < max_bits && !is_sorted(data->a))
