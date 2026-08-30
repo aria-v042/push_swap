@@ -77,7 +77,7 @@ void	display_benchmarks(t_data *data)
 	ft_printf_fd(STDERR_FILENO, "\n");
 	ft_printf_fd(STDERR_FILENO, "[bench] strategy:  %s",
 		get_strategy(data->strat));
-	ft_printf_fd(STDERR_FILENO, " / %d\n", get_complexity(data));
+	ft_printf_fd(STDERR_FILENO, " / %s\n", get_complexity(data));
 	ft_printf_fd(STDERR_FILENO, "[bench] total_ops:  %d\n",
 		total_ops(data->ops_count));
 	ft_printf_fd(STDERR_FILENO, "[bench] sa:  %d  sb:  %d  ss:  %d  "
