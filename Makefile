@@ -12,16 +12,21 @@ LIB = $(LIB_DIR)/libft.a
 MAIN_DIR = $(SRCS_DIR)/main
 UTILS_DIR = $(SRCS_DIR)/utils
 PARSE_DIR = $(SRCS_DIR)/parse
-OPS_DIR = $(SRCS_DIR)/ops
+OPS_DIR = $(SRCS_DIR)/operations
 SORT_DIR = $(SRCS_DIR)/sort
 BENCH_DIR = $(SRCS_DIR)/bench
 
 # WIP: add source files
 SRCS =	$(MAIN_DIR)/main.c \
+		$(UTILS_DIR)/error.c \
+		$(UTILS_DIR)/stack_utils.c \
 		$(PARSE_DIR)/parser.c \
 		$(PARSE_DIR)/parse_flags.c \
 		$(PARSE_DIR)/parse_numbers.c \
-		$(UTILS_DIR)/stack_utils.c \
+		$(OPS_DIR)/push.c \
+		$(OPS_DIR)/swap.c \
+		$(OPS_DIR)/rotate.c \
+		$(OPS_DIR)/reverse_rotate.c \
 
 
 OBJS = $(SRCS:.c=.o)
