@@ -20,30 +20,30 @@ void	sort_two(t_data *data)
 
 void	sort_three(t_data *data)
 {
-	int	a1;
-	int	a2;
-	int	a3;
+	int	first;
+	int	second;
+	int	third;
 
-	a1 = data->a->value;
-	a2 = data->a->next->value;
-	a3 = data->a->next->next->value;
-	if (a1 < a2 && a1 < a3 && a3 < a2)
+	first = data->a->value;
+	second = data->a->next->value;
+	third = data->a->next->next->value;
+	if (first > second && second < third && first < third)
+		sa(p);
+	else if (first > second && second > third)
 	{
-		sa(data);
-		ra(data);
+		sa(p);
+		rra(p);
 	}
-	else if (a2 < a1 && a2 < a3)
-		if (a1 < a3)
-			sa(data);
-		else
-			ra(data);
-	else if (a3 < a1 && a3 < a2 && a1 < a2)
-		rra(data);
-	else if (a3 < a1 && a3 < a2)
+	else if (first > second && second < third && first > third)
+		ra(p);
+	else if (first < second && second > third && first < third)
 	{
-		sa(data);
-		rra(data);
+		sa(p);
+		ra(p);
 	}
+	else if (first < second && second > third && first > third)
+		rra(p);
+}
 }
 
 void	small_sort(t_data *data)
