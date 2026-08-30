@@ -27,30 +27,22 @@ void	sort_three(t_data *data)
 	a1 = data->a->value;
 	a2 = data->a->next->value;
 	a3 = data->a->next->next->value;
-	if (a1 < a2 && a1 < a3)
+	if (a1 < a2 && a1 < a3 && a3 < a2)
 	{
-		if (a3 < a2)
-		{
-			sa(data);
-			ra(data);
-		}
+		sa(data);
+		ra(data);
 	}
 	else if (a2 < a1 && a2 < a3)
-	{
 		if (a1 < a3)
 			sa(data);
 		else
 			ra(data);
-	}
-	else
+	else if (a3 < a1 && a3 < a2 && a1 < a2)
+		rra(data);
+	else if (a3 < a1 && a3 < a2)
 	{
-		if (a1 < a2)
-			rra(data);
-		else
-		{
-			sa(data);
-			rra(data);
-		}
+		sa(data);
+		rra(data);
 	}
 }
 
