@@ -6,13 +6,13 @@
 /*   By: frodrig2 <frodrig2@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/28 20:37:42 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/28 20:38:48 by frodrig2         ###   ########.fr       */
+/*   Updated: 2026/08/30 13:55:45 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atol(const char *s)
+long long	ft_atol(const char *s)
 {
 	long long	lota;
 	int			sign;
