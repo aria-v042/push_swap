@@ -34,6 +34,7 @@ SRCS =	$(MAIN_DIR)/main.c \
 		$(SORT_DIR)/simple.c \
 		$(SORT_DIR)/medium.c \
 		$(SORT_DIR)/complex.c \
+		$(BENCH_DIR)/benchmarks.c
 
 OBJS = $(SRCS:.c=.o)
 HEADER = $(INC_DIR)/push_swap.h
