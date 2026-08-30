@@ -18,23 +18,22 @@ BENCH_DIR = $(SRCS_DIR)/bench
 
 # WIP: add source files
 SRCS =	$(MAIN_DIR)/main.c \
-		$(UTILS_DIR)/error.c \
 		$(UTILS_DIR)/stack_utils.c \
+		$(UTILS_DIR)/error.c \
+		$(UTILS_DIR)/disorder.c \
+		$(UTILS_DIR)/sort_utils_1.c \
+		$(UTILS_DIR)/sort_utils_2.c \
 		$(PARSE_DIR)/parser.c \
 		$(PARSE_DIR)/parse_flags.c \
 		$(PARSE_DIR)/parse_numbers.c \
-		$(OPS_DIR)/push.c \
 		$(OPS_DIR)/swap.c \
+		$(OPS_DIR)/push.c \
 		$(OPS_DIR)/rotate.c \
 		$(OPS_DIR)/reverse_rotate.c \
-		$(SORT_DIR)/medium.c \
-		$(SORT_DIR)/medium_utils.c \
 		$(SORT_DIR)/small.c \
 		$(SORT_DIR)/simple.c \
+		$(SORT_DIR)/medium.c \
 		$(SORT_DIR)/complex.c \
-		$(SORT_DIR)/complex_utils.c \
-		$(SORT_DIR)/disorder.c \
-		$(SORT_DIR)/sorting_utils.c \
 
 OBJS = $(SRCS:.c=.o)
 HEADER = $(INC_DIR)/push_swap.h
