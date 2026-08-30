@@ -51,18 +51,18 @@ void	simple_sort(t_data *data)
 	int	to_push;
 	int	index;
 
-	if (stack_size(data->a) <= 3)
+	if (stack_size(data->a) <= 5)
 	{
 		small_sort(data);
 		return ;
 	}
-	to_push = stack_size(data->a) - 3;
+	to_push = stack_size(data->a) - 5;
 	while (to_push > 0)
 	{
 		pb(data);
 		to_push--;
 	}
-	sort_three(data);
+	small_sort(data);
 	while (data->b)
 	{
 		index = get_insert_index(data->a, data->b->value);
