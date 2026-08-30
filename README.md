@@ -2,7 +2,7 @@
 
 # push_swap
 
-> Sorting data with two stacks, a handful of moves, and a strong opinion about what "fast" means.
+Sorting data with two stacks, a handful of moves, and a strong opinion about what "fast" means.
 
 ## Description
 
@@ -27,7 +27,7 @@ stays safe to pipe into a checker
 ### Compilation
 
 ```bash
-git clone <this-repo-url>
+git clone git@github.com:aria-v042/push_swap.git
 cd push_swap
 make        # builds libft, then push_swap
 ```
