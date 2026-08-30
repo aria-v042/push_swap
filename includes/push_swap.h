@@ -91,6 +91,9 @@ void	rrr(t_data *data);
 
 void	set_disorder(t_data *data);
 
+// SMALL SORT:
+void	small_sort(t_data *data);
+
 /* simple - O(n^2) */
 void	simple_sort(t_data *data);
 /* medium - O(n sqrt(n)) */
