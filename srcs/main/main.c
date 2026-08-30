@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static void cleanup(t_data *data)
+static void	cleanup(t_data *data)
 {
 	stack_free(&data->a);
 	stack_free(&data->b);
