@@ -44,6 +44,15 @@ void	sort_three(t_data *data)
 	else if (first < second && second > third && first > third)
 		rra(p);
 }
+
+void	sort_four(t_data *data)
+{
+	// TODO
+}
+
+void	sort_five(t_data *data)
+{
+	// TODO
 }
 
 void	small_sort(t_data *data)
