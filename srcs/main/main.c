@@ -6,18 +6,29 @@
 /*   By: frodrig2 <frodrig2@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/25 12:41:11 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/26 22:02:16 by frodrig2         ###   ########.fr       */
+/*   Updated: 2026/08/30 01:18:59 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	error_exit(t_data *data)
+static void	run_sort(t_data *data)
 {
-	stack_free(&data->a);
-	stack_free(&data->b);
-	ft_printf_fd(2, "Error\n");
-	exit (1);
+	if (data->strat == SIMPLE)
+		simple_sort(data);
+	else if (data->strat == MEDIUM)
+		medium_sort(data);
+	else if (data->strat == COMPLEX)
+		complex_sort(data);
+	else if (data->strat == ADAPTIVE)
+	{
+		if (data->disorder < 0.20)
+			simple_sort(data);
+		else if (data->disorder >= 0.20 && data->disorder < 0.50)
+			medium_sort(data);
+		else
+			complex_sort(data);
+	}
 }
 
 static void	init_data(t_data *data)
@@ -40,5 +51,6 @@ int	main(int argc, char **argv)
 	if (parser(&data, argc, argv) != 0)
 		error_exit(&data);
 	set_disorder(&data);
+	run_sort(&data);
 	return (0);
 }
