@@ -96,19 +96,6 @@ void	rotate_to_top_b(t_data *data, int index, int size)
 	}
 }
 
-int	find_insert_index_b(t_stack *stack, int count_in_b, int value)
-{
-	int	idx;
-
-	idx = 0;
-	while (idx < count_in_b && stack && stack->value > value)
-	{
-		idx++;
-		stack = stack->next;
-	}
-	return (idx);
-}
-
 void	insert_into_b(t_data *data, int idx)
 {
 	int	i;

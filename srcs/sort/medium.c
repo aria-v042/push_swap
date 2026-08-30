@@ -21,9 +21,9 @@ static int	get_chunk_size(int size)
 
 static int	get_index_in_chunk(t_stack *a, int chunk_min, int chunk_max)
 {
-	int index;
-	int chunk_first;
-	int chunk_last;
+	int	index;
+	int	chunk_first;
+	int	chunk_last;
 
 	index = 0;
 	chunk_first = -1;
