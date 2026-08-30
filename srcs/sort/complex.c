@@ -6,7 +6,7 @@
 /*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 01:33:42 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/30 09:07:23 by nd-abreu         ###   ########.fr       */
+/*   Updated: 2026/08/30 14:01:24 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ void	complex_sort(t_data *data)
 	int	zeros;
 	int	bit;
 
+	if (is_sorted(data->a))
+		return ;
 	size = stack_size(data->a);
 	if (size <= 5)
 		return (small_sort(data));

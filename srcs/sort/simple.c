@@ -6,7 +6,7 @@
 /*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 01:16:21 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/30 02:29:06 by nd-abreu         ###   ########.fr       */
+/*   Updated: 2026/08/30 14:01:48 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,10 @@ void	simple_sort(t_data *data)
 	int	to_push;
 	int	index;
 
-	if (stack_size(data->a) <= 5)
-	{
-		small_sort(data);
+	if (is_sorted(data->a))
 		return ;
-	}
+	if (stack_size(data->a) <= 5)
+		return (small_sort(data));
 	to_push = stack_size(data->a) - 5;
 	while (to_push > 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 01:32:43 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/30 06:28:02 by nd-abreu         ###   ########.fr       */
+/*   Updated: 2026/08/30 14:01:08 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ void	medium_sort(t_data *data)
 	int	width;
 	int	chunk;
 
+	if (is_sorted(data->a))
+		return ;
 	if (stack_size(data->a) <= 5)
 		return (small_sort(data));
 	assign_min_max(data->a, &min, &max);
