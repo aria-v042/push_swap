@@ -56,5 +56,17 @@ void	sort_three(t_data *data)
 
 void	small_sort(t_data *data)
 {
-	// pick one of the sort functions for small stacks
+	int size;
+
+	size = stack_size(data->a);
+	if (size <= 1)
+		return ;
+	if (size == 2)
+		sort_two(data);
+	else if (size == 3)
+		sort_three(data);
+	else if (size == 4)
+		sort_four(data);
+	else if (size == 5)
+		sort_five(data);
 }
