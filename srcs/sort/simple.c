@@ -12,15 +12,15 @@
 
 #include "push_swap.h"
 
-static int	find_insert_index(t_stack *stack, int value)
+static int	find_insert_index(t_stack *node, int value)
 {
 	int	index;
 
 	index = 0;
-	while (stack && stack->value < value)
+	while (node && node->value < value)
 	{
 		index++;
-		stack = stack->next;
+		node = node->next;
 	}
 	return (index);
 }
