@@ -12,6 +12,12 @@
 
 #include "push_swap.h"
 
+static void cleanup(t_data *data)
+{
+	stack_free(&data->a);
+	stack_free(&data->b);
+}
+
 static void	run_sort(t_data *data)
 {
 	if (data->strat == SIMPLE)
@@ -52,5 +58,6 @@ int	main(int argc, char **argv)
 		error_exit(&data);
 	set_disorder(&data);
 	run_sort(&data);
+	cleanup(&data);
 	return (0);
 }
