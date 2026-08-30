@@ -50,7 +50,7 @@ static void	sort_size(t_data *data, int size)
 	int	pushed;
 	int	min_index;
 
-	pushed = 0
+	pushed = 0;
 	while (size - pushed > 3)
 	{
 		min_index = get_min_index(data->a, size - pushed);
@@ -67,7 +67,7 @@ static void	sort_size(t_data *data, int size)
 
 void	small_sort(t_data *data)
 {
-	int size;
+	int	size;
 
 	size = stack_size(data->a);
 	if (size <= 1)
