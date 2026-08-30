@@ -95,22 +95,3 @@ void	rotate_to_top_b(t_data *data, int index, int size)
 		}
 	}
 }
-
-void	insert_into_b(t_data *data, int idx)
-{
-	int	i;
-
-	i = 0;
-	while (i < idx)
-	{
-		rb(data);
-		i++;
-	}
-	pb(data);
-	i = 0;
-	while (i < idx)
-	{
-		rrb(data);
-		i++;
-	}
-}
