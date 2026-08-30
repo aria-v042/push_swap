@@ -39,5 +39,6 @@ int	main(int argc, char **argv)
 	init_data(&data);
 	if (parser(&data, argc, argv) != 0)
 		error_exit(&data);
+	set_disorder(&data);
 	return (0);
 }
