@@ -57,18 +57,6 @@ typedef struct s_data
 	int		ops_count[11];
 }	t_data;
 
-/* ==== MAIN (srcs/main/) ==== */
-
-void	error_exit(t_data *data);
-
-/* ==== UTILS (srcs/utils/) ==== */
-
-t_stack	*stack_new_node(int value);
-void	stack_add_bottom(t_stack **stack_p, t_stack *new_node);
-void	stack_free(t_stack **stack_p);
-t_stack	*stack_get_bottom(t_stack *node);
-int		stack_size(t_stack *stack);
-
 /* ==== PARSING (srcs/parse/) ==== */
 
 int		parser(t_data *data, int argc, char **argv);
@@ -91,30 +79,36 @@ void	rrr(t_data *data);
 
 /* ==== SORTING STRATEGIES (srcs/sort/) ==== */
 
-void	set_disorder(t_data *data);
-
-// SMALL SORT:
 void	small_sort(t_data *data);
-
-/* simple - O(n^2) */
 void	simple_sort(t_data *data);
-
-/* medium - O(n sqrt(n)) */
 void	medium_sort(t_data *data);
-int		find_insert_index_b(t_stack *stack, int count_in_b, int value);
-void	insert_into_b(t_data *data, int idx);
-
-/* complex - O(n log n) */
 void	complex_sort(t_data *data);
-void	assign_indexes(t_stack *a);
-int		is_sorted(t_stack *stack);
-
-// UTILS:
-int		get_min_index(t_stack *node, int n);
-void	rotate_to_top_a(t_data *data, int index, int size);
 
 /* ==== BENCHMARKS (srcs/bench/) ==== */
 
 void	display_benchmarks(t_data *data);
+
+/* ==== UTILS (srcs/utils/) ==== */
+
+// error
+void	error_exit(t_data *data);
+
+// disorder
+void	set_disorder(t_data *data);
+
+// stack
+t_stack	*stack_new_node(int value);
+void	stack_add_bottom(t_stack **stack_p, t_stack *new_node);
+void	stack_free(t_stack **stack_p);
+t_stack	*stack_get_bottom(t_stack *node);
+int		stack_size(t_stack *stack);
+
+// sort
+int		get_min_index(t_stack *node, int n);
+void	rotate_to_top_a(t_data *data, int index, int size);
+int		find_insert_index_b(t_stack *stack, int count_in_b, int value);
+void	insert_into_b(t_data *data, int idx);
+void	assign_indexes(t_stack *a);
+int		is_sorted(t_stack *stack);
 
 #endif
