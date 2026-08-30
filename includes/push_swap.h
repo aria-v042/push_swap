@@ -6,7 +6,7 @@
 /*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/25 12:42:26 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/30 01:42:06 by nd-abreu         ###   ########.fr       */
+/*   Updated: 2026/08/30 06:27:05 by nd-abreu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ void	set_disorder(t_data *data);
 void	simple_sort(t_data *data);
 /* medium - O(n sqrt(n)) */
 void	medium_sort(t_data *data);
+int		find_insert_index_b(t_stack *stack, int count_in_b, int value);
+void	insert_into_b(t_data *data, int idx);
 /* complex - O(n log n) */
 void	complex_sort(t_data *data);
 
