@@ -28,7 +28,7 @@ void	assign_indexes(t_stack *a)
 			rank += (j->value < i->value);
 			j = j->next;
 		}
-		i->index = rank;
+		i->rank = rank;
 		i = i->next;
 	}
 }

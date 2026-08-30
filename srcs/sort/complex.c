@@ -29,7 +29,7 @@ static int	count_zero_bit(t_stack *a, int bit)
 	count = 0;
 	while (a)
 	{
-		if (((a->index >> bit) & 1) == 0)
+		if (((a->rank >> bit) & 1) == 0)
 			count++;
 		a = a->next;
 	}
@@ -43,7 +43,7 @@ static void	process_bit(t_data *data, int bit, int size)
 	i = 0;
 	while (i < size)
 	{
-		if ((data->a->index >> bit) & 1)
+		if ((data->a->rank >> bit) & 1)
 			ra(data);
 		else
 			pb(data);
