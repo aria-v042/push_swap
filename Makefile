@@ -16,7 +16,6 @@ OPS_DIR = $(SRCS_DIR)/operations
 SORT_DIR = $(SRCS_DIR)/sort
 BENCH_DIR = $(SRCS_DIR)/bench
 
-# WIP: add source files
 SRCS =	$(MAIN_DIR)/main.c \
 		$(UTILS_DIR)/stack_utils.c \
 		$(UTILS_DIR)/error.c \
