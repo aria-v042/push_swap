@@ -14,5 +14,6 @@
 
 void	medium_sort(t_data *data)
 {
-	// TODO
+	if (stack_size(data->a) <= 5)
+		return (small_sort(data->a));
 }
