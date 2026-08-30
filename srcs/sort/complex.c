@@ -74,4 +74,3 @@ void	complex_sort(t_data *data)
 		bit++;
 	}
 }
-
