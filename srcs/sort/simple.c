@@ -12,15 +12,17 @@
 
 #include "push_swap.h"
 
-static int	find_insert_index(t_stack *node, int value)
+static int	get_insert_index(t_stack *stack, int value)
 {
-	int	index;
+	int		index;
+	t_stack	*current;
 
 	index = 0;
-	while (node && node->value < value)
+	current = stack;
+	while (current && current->value < value)
 	{
 		index++;
-		node = node->next;
+		current = current->next;
 	}
 	return (index);
 }
@@ -63,7 +65,7 @@ void	simple_sort(t_data *data)
 	sort_three(data);
 	while (data->b)
 	{
-		index = find_insert_index(data->a, data->b->value);
+		index = get_insert_index(data->a, data->b->value);
 		insert_into_a(data, index);
 	}
 }
