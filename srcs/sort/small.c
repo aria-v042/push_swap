@@ -28,21 +28,21 @@ static void	sort_three(t_data *data)
 	second = data->a->next->value;
 	third = data->a->next->next->value;
 	if (first > second && second < third && first < third)
-		sa(p);
+		sa(data);
 	else if (first > second && second > third)
 	{
-		sa(p);
-		rra(p);
+		sa(data);
+		rra(data);
 	}
 	else if (first > second && second < third && first > third)
-		ra(p);
+		ra(data);
 	else if (first < second && second > third && first < third)
 	{
-		sa(p);
-		ra(p);
+		sa(data);
+		ra(data);
 	}
 	else if (first < second && second > third && first > third)
-		rra(p);
+		rra(data);
 }
 
 static void	sort_size(t_data *data, int size)
