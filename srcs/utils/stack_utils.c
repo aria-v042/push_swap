@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frodrig2 <frodrig2@students.42porto.com>   +#+  +:+       +#+        */
+/*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/28 20:59:20 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/28 21:26:50 by frodrig2         ###   ########.fr       */
+/*   Updated: 2026/08/30 01:20:59 by nd-abreu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,19 @@ t_stack	*stack_get_bottom(t_stack *node)
 	while (node->next)
 		node = node->next;
 	return (node);
+}
+
+int	stack_size(t_stack *stack)
+{
+	int size;
+	
+	size = 0;
+	while (stack)
+	{
+		size++;
+		stack = stack->next;
+	}
+	return (size);
 }
 
 t_stack	*stack_new_node(int value)

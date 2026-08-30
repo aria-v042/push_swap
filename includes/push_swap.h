@@ -6,7 +6,7 @@
 /*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/25 12:42:26 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/29 21:47:12 by frodrig2         ###   ########.fr       */
+/*   Updated: 2026/08/30 01:19:30 by nd-abreu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ t_stack	*stack_new_node(int value);
 void	stack_add_bottom(t_stack **stack_p, t_stack *new_node);
 void	stack_free(t_stack **stack_p);
 t_stack	*stack_get_bottom(t_stack *node);
+int		stack_size(t_stack *stack);
 
 /* ==== PARSING (srcs/parse/) ==== */
 
