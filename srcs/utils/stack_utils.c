@@ -42,6 +42,7 @@ t_stack	*stack_new_node(int value)
 	if (!new_node)
 		return (NULL);
 	new_node->value = value;
+	new_node->rank = -1;
 	new_node->next = NULL;
 	return (new_node);
 }
