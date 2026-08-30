@@ -6,7 +6,7 @@
 /*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/28 20:59:20 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/30 01:20:59 by nd-abreu         ###   ########.fr       */
+/*   Updated: 2026/08/30 01:24:42 by nd-abreu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ t_stack	*stack_get_bottom(t_stack *node)
 
 int	stack_size(t_stack *stack)
 {
-	int size;
-	
+	int	size;
+
 	size = 0;
 	while (stack)
 	{
