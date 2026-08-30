@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   small_sort.c                                       :+:      :+:    :+:   */
+/*   small.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/29 03:31:42 by nd-abreu          #+#    #+#             */
-/*   Updated: 2026/08/30 01:52:34 by nd-abreu         ###   ########.fr       */
+/*   Updated: 2026/08/30 09:25:02 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,13 @@ static void	sort_three(t_data *data)
 
 static void	sort_four(t_data *data)
 {
-	// TODO
+	int	min_index;
+
+	min_index = get_min_index(data->a, 4);
+	rotate_to_top_a(data, min_index, 4);
+	pb(data);
+	sort_three(data);
+	pa(data);
 }
 
 static void	sort_five(t_data *data)

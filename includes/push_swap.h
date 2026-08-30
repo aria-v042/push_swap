@@ -6,7 +6,7 @@
 /*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/25 12:42:26 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/30 06:27:05 by nd-abreu         ###   ########.fr       */
+/*   Updated: 2026/08/30 09:25:40 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,10 @@ int		find_insert_index_b(t_stack *stack, int count_in_b, int value);
 void	insert_into_b(t_data *data, int idx);
 /* complex - O(n log n) */
 void	complex_sort(t_data *data);
+
+// UTILS:
+int		get_min_index(t_stack *node, int n);
+void	rotate_to_top_a(t_data *data, int index, int size);
 
 /* ==== BENCHMARKS (srcs/bench/) ==== */
 
