@@ -12,13 +12,13 @@
 
 #include "push_swap.h"
 
-void	sort_two(t_data *data)
+static void	sort_two(t_data *data)
 {
 	if (data->a->value > data->a->next->value)
 		sa(data);
 }
 
-void	sort_three(t_data *data)
+static void	sort_three(t_data *data)
 {
 	int	first;
 	int	second;
@@ -45,12 +45,12 @@ void	sort_three(t_data *data)
 		rra(p);
 }
 
-void	sort_four(t_data *data)
+static void	sort_four(t_data *data)
 {
 	// TODO
 }
 
-void	sort_five(t_data *data)
+static void	sort_five(t_data *data)
 {
 	// TODO
 }
