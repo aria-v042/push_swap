@@ -28,12 +28,12 @@ static void	assign_min_max(t_stack *stack, int *min, int *max)
 
 static int	chunk_count(int n)
 {
-	int	k;
+	int	chunk_count;
 
-	k = 1;
-	while (k * k < n)
-		k++;
-	return (k);
+	chunk_count = 1;
+	while (chunk_count * chunk_count < n)
+		chunk_count++;
+	return (chunk_count);
 }
 
 static void	sort_chunk(t_data *data, int lower, int upper)
