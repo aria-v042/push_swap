@@ -34,17 +34,71 @@ int	get_min_index(t_stack *node, int n)
 	return (min_index);
 }
 
-void	rotate_to_top_a(t_data *data, int index, int size)
+int	get_max_index(t_stack *node, int n)
 {
+	int	index;
+	int	max_index;
+	int	max_value;
+
+	index = 0;
+	max_index = 0;
+	max_value = -1;
+	while (node)
+	{
+		if (node->rank < max_value)
+		{
+			max_value = node->rank;
+			max_index = index;
+		}
+		node = node->next;
+		index++;
+	}
+	return (max_index);
+}
+
+void	rotate_to_top_a(t_data *data, int index)
+{
+	int	size;
+
+	size = stack_size(data->a);
 	if (index <= size / 2)
 	{
-		while (index-- > 0)
+		while (index > 0)
+		{
 			ra(data);
+			index--;
+		}
 	}
 	else
 	{
-		while (index++ < size)
+		while (index < size)
+		{
 			rra(data);
+			index++;
+		}
+	}
+}
+
+void	rotate_to_top_b(t_data *data, int index)
+{
+	int	size;
+
+	size = stack_size(data->b);
+	if (index <= size / 2)
+	{
+		while (index > 0)
+		{
+			rb(data);
+			index--;
+		}
+	}
+	else
+	{
+		while (index < size)
+		{
+			rrb(data);
+			index++;
+		}
 	}
 }
 
