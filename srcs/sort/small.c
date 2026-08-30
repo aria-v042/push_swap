@@ -6,7 +6,7 @@
 /*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/29 03:31:42 by nd-abreu          #+#    #+#             */
-/*   Updated: 2026/08/30 09:25:02 by frodrig2         ###   ########.fr       */
+/*   Updated: 2026/08/30 10:46:10 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,24 @@ static void	sort_three(t_data *data)
 		rra(p);
 }
 
-static void	sort_four(t_data *data)
+static void	sort_size(t_data *data, int size)
 {
+	int	pushed;
 	int	min_index;
 
-	min_index = get_min_index(data->a, 4);
-	rotate_to_top_a(data, min_index, 4);
-	pb(data);
+	pushed = 0
+	while (size - pushed > 3)
+	{
+		min_index = get_min_index(data->a, size - pushed);
+		rotate_to_top_a(data, min_index, size - pushed);
+		pb(data);
+		pushed++;
+	}
 	sort_three(data);
-	pa(data);
-}
-
-static void	sort_five(t_data *data)
-{
-	// TODO
+	while (pushed--)
+	{
+		pa(data);
+	}
 }
 
 void	small_sort(t_data *data)
@@ -73,7 +77,7 @@ void	small_sort(t_data *data)
 	else if (size == 3)
 		sort_three(data);
 	else if (size == 4)
-		sort_four(data);
+		sort_size(data, 4);
 	else if (size == 5)
-		sort_five(data);
+		sort_size(data, 5);
 }
