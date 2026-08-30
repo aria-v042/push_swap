@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frodrig2 <frodrig2@students.42porto.com>   +#+  +:+       +#+        */
+/*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 01:16:21 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/30 01:34:46 by frodrig2         ###   ########.fr       */
+/*   Updated: 2026/08/30 01:53:49 by nd-abreu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	simple_sort(t_data *data)
 {
-	if (stack_size(data->a) < 5) //?
+	if (stack_size(data->a) <= 5)
+		small_sort(data);
 }

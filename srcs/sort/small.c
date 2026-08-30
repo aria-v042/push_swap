@@ -6,7 +6,7 @@
 /*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/29 03:31:42 by nd-abreu          #+#    #+#             */
-/*   Updated: 2026/08/29 03:37:22 by nd-abreu         ###   ########.fr       */
+/*   Updated: 2026/08/30 01:52:34 by nd-abreu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,9 @@ void	sort_three(t_data *data)
 			rra(data);
 		}
 	}
+}
+
+void	small_sort(t_stack *data)
+{
+	// pick one of the sort functions for small stacks
 }
