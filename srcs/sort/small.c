@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
 void	sort_two(t_data *data)
 {
 	if (data->a->value > data->a->next->value)
@@ -52,7 +54,7 @@ void	sort_three(t_data *data)
 	}
 }
 
-void	small_sort(t_stack *data)
+void	small_sort(t_data *data)
 {
 	// pick one of the sort functions for small stacks
 }
