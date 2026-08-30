@@ -16,40 +16,39 @@ static int	get_insert_index(t_stack *stack, int value)
 {
 	int		index;
 	t_stack	*current;
+	t_stack	*next;
 
 	index = 0;
 	current = stack;
-	while (current && current->value < value)
+	while (current)
 	{
-		index++;
+		next = current->next;
+		if (!next)
+			next = stack;
+		if (value > current->value && value < next->value)
+			return (index + 1);
+		if (current->value > next->value
+			&& (value > current->value || value < next->value))
+			return (index + 1);
 		current = current->next;
+		index++;
 	}
-	return (index);
+	return (0);
 }
 
-static void	insert_into_a(t_data *data, int index)
+static void	insert_into_a(t_data *data, int value)
 {
-	int	i;
+	int	index;
 
-	i = 0;
-	while (i < index)
-	{
-		ra(data);
-		i++;
-	}
+	index = get_insert_index(data->a, value);
+	rotate_to_top_a(data, index, stack_size(data->a));
 	pa(data);
-	i = 0;
-	while (i < index)
-	{
-		rra(data);
-		i++;
-	}
 }
 
 void	simple_sort(t_data *data)
 {
 	int	to_push;
-	int	index;
+	int	min_index;
 
 	if (is_sorted(data->a))
 		return ;
@@ -63,8 +62,7 @@ void	simple_sort(t_data *data)
 	}
 	small_sort(data);
 	while (data->b)
-	{
-		index = get_insert_index(data->a, data->b->value);
-		insert_into_a(data, index);
-	}
+		insert_into_a(data, data->b->value);
+	min_index = get_min_index(data->a, stack_size(data->a));
+	rotate_to_top_a(data, min_index, stack_size(data->a));
 }
