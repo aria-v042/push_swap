@@ -38,16 +38,16 @@ static int	count_zero_bit(t_stack *a, int bit)
 
 static void	process_bit(t_data *data, int bit, int size)
 {
-	int	j;
+	int	i;
 
-	j = 0;
-	while (j < size)
+	i = 0;
+	while (i < size)
 	{
 		if ((data->a->index >> bit) & 1)
 			ra(data);
 		else
 			pb(data);
-		j++;
+		i++;
 	}
 	while (data->b)
 		pa(data);
