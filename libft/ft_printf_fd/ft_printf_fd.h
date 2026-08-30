@@ -6,7 +6,7 @@
 /*   By: frodrig2 <frodrig2@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 10:30:13 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/18 10:30:15 by frodrig2         ###   ########.fr       */
+/*   Updated: 2026/08/30 02:55:59 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,5 @@ int		convert_hexadecimal_fd(int fd, va_list *ap_ptr, char specifier);
 /* ==== UTILS ==== */
 
 int		ft_putnbr_base_fd(unsigned long long n, char *base, int fd);
-size_t	ft_numlen(int n);
 
 #endif

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frodrig2 <frodrig2@students.42porto.com>   +#+  +:+       +#+        */
+/*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/28 20:59:20 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/28 21:26:50 by frodrig2         ###   ########.fr       */
+/*   Updated: 2026/08/30 01:24:42 by nd-abreu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_stack	*stack_get_bottom(t_stack *node)
+t_stack	*stack_get_bottom(t_stack *node)
 {
 	if (!node)
 		return (NULL);
@@ -21,15 +21,17 @@ static t_stack	*stack_get_bottom(t_stack *node)
 	return (node);
 }
 
-int	stack_check_dup(t_stack *node, int num)
+int	stack_size(t_stack *stack)
 {
-	while (node)
+	int	size;
+
+	size = 0;
+	while (stack)
 	{
-		if (node->value == num)
-			return (1);
-		node = node->next;
+		size++;
+		stack = stack->next;
 	}
-	return (0);
+	return (size);
 }
 
 t_stack	*stack_new_node(int value)
@@ -40,6 +42,7 @@ t_stack	*stack_new_node(int value)
 	if (!new_node)
 		return (NULL);
 	new_node->value = value;
+	new_node->rank = -1;
 	new_node->next = NULL;
 	return (new_node);
 }

@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frodrig2 <frodrig2@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/18 10:33:38 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/30 02:55:21 by frodrig2         ###   ########.fr       */
+/*   Created: 2026/08/29 21:21:53 by frodrig2          #+#    #+#             */
+/*   Updated: 2026/08/29 21:22:38 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "push_swap.h"
 
-int	ft_putnbr_base(unsigned long long n, char *base)
+void	error_exit(t_data *data)
 {
-	unsigned long long	base_size;
-	int					bytes_printed;
-
-	bytes_printed = 0;
-	base_size = ft_strlen(base);
-	if (n >= base_size)
-		bytes_printed += ft_putnbr_base(n / base_size, base);
-	ft_putchar_fd(base[n % base_size], STDOUT_FILENO);
-	return (++bytes_printed);
+	stack_free(&data->a);
+	stack_free(&data->b);
+	ft_printf_fd(2, "Error\n");
+	exit (1);
 }

@@ -6,7 +6,7 @@
 /*   By: nd-abreu <nd-abreu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/25 12:42:26 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/29 00:25:45 by nd-abreu         ###   ########.fr       */
+/*   Updated: 2026/08/30 12:05:08 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 
 # include "libft.h"
 # include <limits.h>
+# include <unistd.h>
 
 typedef struct s_stack
 {
 	int				value;
+	int				rank;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -55,15 +57,6 @@ typedef struct s_data
 	int		ops_count[11];
 }	t_data;
 
-/* ==== MAIN (srcs/main/) ==== */
-
-/* ==== UTILS (srcs/utils/) ==== */
-
-int		stack_check_dup(t_stack *node, int num);
-t_stack	*stack_new_node(int value);
-void	stack_add_bottom(t_stack **stack_p, t_stack *new_node);
-void	stack_free(t_stack **stack_p);
-
 /* ==== PARSING (srcs/parse/) ==== */
 
 int		parser(t_data *data, int argc, char **argv);
@@ -72,13 +65,50 @@ int		parse_numbers(t_data *data, char *arg);
 
 /* ==== OPERATIONS (srcs/ops/) ==== */
 
+void	sa(t_data *data);
+void	sb(t_data *data);
+void	ss(t_data *data);
+void	pa(t_data *data);
+void	pb(t_data *data);
+void	ra(t_data *data);
+void	rb(t_data *data);
+void	rr(t_data *data);
+void	rra(t_data *data);
+void	rrb(t_data *data);
+void	rrr(t_data *data);
+
 /* ==== SORTING STRATEGIES (srcs/sort/) ==== */
 
-/* tiny */
-/* simple - O(n^2) */
-/* medium - O(n sqrt(n)) */
-/* complex - O(n log n) */
+void	small_sort(t_data *data);
+void	simple_sort(t_data *data);
+void	medium_sort(t_data *data);
+void	complex_sort(t_data *data);
 
 /* ==== BENCHMARKS (srcs/bench/) ==== */
+
+void	display_benchmarks(t_data *data);
+
+/* ==== UTILS (srcs/utils/) ==== */
+
+// error
+void	error_exit(t_data *data);
+
+// disorder
+void	set_disorder(t_data *data);
+
+// stack
+t_stack	*stack_new_node(int value);
+void	stack_add_bottom(t_stack **stack_p, t_stack *new_node);
+void	stack_free(t_stack **stack_p);
+t_stack	*stack_get_bottom(t_stack *node);
+int		stack_size(t_stack *stack);
+
+// sort
+int		get_min_index(t_stack *node, int n);
+void	rotate_to_top_a(t_data *data, int index, int size);
+int		find_insert_index_b(t_stack *stack, int count_in_b, int value);
+void	insert_into_b(t_data *data, int idx);
+void	assign_indexes(t_stack *a);
+int		is_sorted(t_stack *stack);
 
 #endif

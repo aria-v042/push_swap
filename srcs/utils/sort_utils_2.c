@@ -1,26 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   sort_utils_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frodrig2 <frodrig2@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/18 10:33:38 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/30 02:55:21 by frodrig2         ###   ########.fr       */
+/*   Created: 2026/08/30 14:27:09 by frodrig2          #+#    #+#             */
+/*   Updated: 2026/08/30 14:27:36 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "push_swap.h"
 
-int	ft_putnbr_base(unsigned long long n, char *base)
+void	assign_indexes(t_stack *a)
 {
-	unsigned long long	base_size;
-	int					bytes_printed;
+	t_stack	*i;
+	t_stack	*j;
+	int		rank;
 
-	bytes_printed = 0;
-	base_size = ft_strlen(base);
-	if (n >= base_size)
-		bytes_printed += ft_putnbr_base(n / base_size, base);
-	ft_putchar_fd(base[n % base_size], STDOUT_FILENO);
-	return (++bytes_printed);
+	i = a;
+	while (i)
+	{
+		rank = 0;
+		j = a;
+		while (j)
+		{
+			rank += (j->value < i->value);
+			j = j->next;
+		}
+		i->rank = rank;
+		i = i->next;
+	}
+}
+
+int	is_sorted(t_stack *stack)
+{
+	while (stack && stack->next)
+	{
+		if (stack->value > stack->next->value)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }
