@@ -6,7 +6,7 @@
 /*   By: frodrig2 <frodrig2@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 09:02:26 by frodrig2          #+#    #+#             */
-/*   Updated: 2026/08/30 13:58:04 by frodrig2         ###   ########.fr       */
+/*   Updated: 2026/08/30 14:27:46 by frodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,34 +48,34 @@ void	rotate_to_top_a(t_data *data, int index, int size)
 	}
 }
 
-void	assign_indexes(t_stack *a)
+int	find_insert_index_b(t_stack *stack, int count_in_b, int value)
 {
-	t_stack	*i;
-	t_stack	*j;
-	int		rank;
+	int	idx;
 
-	i = a;
-	while (i)
+	idx = 0;
+	while (idx < count_in_b && stack && stack->value > value)
 	{
-		rank = 0;
-		j = a;
-		while (j)
-		{
-			rank += (j->value < i->value);
-			j = j->next;
-		}
-		i->rank = rank;
-		i = i->next;
-	}
-}
-
-int	is_sorted(t_stack *stack)
-{
-	while (stack && stack->next)
-	{
-		if (stack->value > stack->next->value)
-			return (0);
+		idx++;
 		stack = stack->next;
 	}
-	return (1);
+	return (idx);
+}
+
+void	insert_into_b(t_data *data, int idx)
+{
+	int	i;
+
+	i = 0;
+	while (i < idx)
+	{
+		rb(data);
+		i++;
+	}
+	pb(data);
+	i = 0;
+	while (i < idx)
+	{
+		rrb(data);
+		i++;
+	}
 }
